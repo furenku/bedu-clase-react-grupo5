@@ -7,7 +7,7 @@ import './ComponenteConEstilosDesdeArchivo.css';
 
 
 
-// una función en el estilo "antiguo"
+// un Componente funcional. Escrito usando una función en el estilo "antiguo"
 const ComponenteFuncional = function( props ) {
   return <p>Un componente funcional. 
     Ejecuta automáticamente la función 'render',
@@ -69,7 +69,7 @@ const PersonaVersionDos = ( props ) => {
 
 
 const ComponenteConEstilosDesdeArchivo = () => {
-  // utilizamos estilos declarada
+  // utilizamos estilos declarados
   // en un archivo .css importado arriba.
   return (
     <React.Fragment>
@@ -143,9 +143,8 @@ class App extends Component {
         {
         /*
         WARNING: tip avanzado!
-        versión mucho más avanzada,
-        descomponiendo el objeto 'unaPersona'
-        utilizando el operador 'spread' (...).
+        versión descomponiendo el objeto 'unaPersona'
+        utilizando el operador spread: ...
         Es equivalente a la versión anterior
         */
         }
