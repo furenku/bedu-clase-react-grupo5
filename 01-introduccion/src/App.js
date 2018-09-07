@@ -4,16 +4,11 @@ import './App.css';
 
 import './ComponenteConEstilosDesdeArchivo.css';
 
-const unaPersona = {
-  nombres: "Juan",
-  apellidos: "Pérez García",
-  edad: 30,
-  profesion: "Estudiante"
-};
+
 
 
 // una función en el estilo "antiguo"
-const ComponenteFuncional = function() {
+const ComponenteFuncional = function( props ) {
   return <p>Un componente funcional. 
     Ejecuta automáticamente la función 'render',
     que está implícita
@@ -28,11 +23,21 @@ const Reloj = ( props ) => {
 }
 
 
+
+// un Objeto que describe una persona.
+const unaPersona = {
+  nombres: "Juan",
+  apellidos: "Pérez García",
+  edad: 30,
+  profesion: "Estudiante"
+};
+
+
 const PersonaVersionUno = ( props ) => {
-  // utilizamos REact.Fragment
+  // utilizamos React.Fragment
   // porque return debe devolver un único objeto html,
   // pero no queremos añadir html adicional.
-  // React.Fragment desaparece al trazarle la interfaz
+  // React.Fragment desaparece al presentarse en la interfaz
   return (
     <React.Fragment>
       <h1>
@@ -111,7 +116,7 @@ const ComponenteConEstilosEnLinea = () => {
 
 
 /*
-Un componente completo. puede tener más métodos que sólo render,
+Un Componente de Clase. puede tener más métodos que sólo render,
 y dicha función 'render' debe ser declarada explícitamente
 */
 class App extends Component {
