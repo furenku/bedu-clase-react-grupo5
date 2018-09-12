@@ -129,7 +129,7 @@ class App extends Component {
         <ComponenteConEstilosDesdeArchivo/>
         <ComponenteConEstilosEnLinea/>
 
-        <Reloj hora={this.obtenerHora()}/>
+        <Reloj hora={this.obtenerHora}/>
         
         <PersonaVersionUno persona={unaPersona}/>
         
