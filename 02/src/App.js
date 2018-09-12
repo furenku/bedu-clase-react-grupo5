@@ -25,6 +25,11 @@ const unaPersonaFalsa = {
       nombres: "Ana",
       apellidos: "Pérez Jiménez",
       edad: 8
+    },
+    {
+      nombres: "Ignacio",
+      apellidos: "Pérez Jiménez",
+      edad: 12
     }
   ]
 };
@@ -72,19 +77,58 @@ class PersonaConEstado extends React.Component {
 
 
 const Persona = ( props ) => {
+
+  // primero construimos las listas,
+  // puesto que no podemos armarlas dentro de 'return'
+
+
+  let listaEscuelas = props.escuelas.map( (escuela, indice) => {
+    return (
+      <li key={indice}>
+        {escuela}
+      </li>
+    )
+  })
+  
+  let listaHijos = props.hijos.map( (hijo, indice) => {
+    return (
+      <li key={indice}>
+        <div>
+          { hijo.nombres } { hijo.apellidos }
+        </div>
+        <div>
+          { hijo.edad } años
+        </div>
+      </li>
+    )
+  })
+
   return (
     <article>
-      <div>{props.nombres}</div>
-      <div>{props.apellidos}</div>
-      <div>{props.edad}</div>
+      <div>{props.nombres} {props.apellidos}</div>
+      <div>{props.edad} años</div>
 
       <button onClick={ () => props.alIncrementarEdad() }>
         Incrementar Edad
       </button>
 
       <div>{props.profesion}</div>
-      <div>{props.escuelas}</div>
+
       <div>{props.casado}</div>
+
+      <h4>Escuelas</h4>
+
+      <ul>
+        { listaEscuelas }
+      </ul>
+
+      <h4>Hijos</h4>
+
+      <ul>
+        { listaHijos }
+      </ul>
+
+
     </article>
   )
 }
